@@ -26,8 +26,41 @@ public class Desafio {
             System.out.println(menu);
             opcion = teclado.nextInt();
 
+            switch (opcion){
+
+                case 1:
+                    System.out.println("Saldo actualizado es: " + saldo + "$");
+                    break;
+
+                case 2:
+                    System.out.println("¿Cual es el valor de retirar? ");
+                    double valorRetirar = teclado.nextDouble();
+                    if (valorRetirar > saldo){
+                        System.out.println("Saldo insuficiente ");
+                    }else {
+                        saldo = saldo - valorRetirar;
+
+                        System.out.println("El saldo actualizado es: " + saldo);
+                    }
+                    break;
+                case 3:
+                    System.out.println("¿Cual es el valor a depositar ? ");
+                    double valorADepositar = teclado.nextDouble();
+                    saldo += valorADepositar;
+
+                    System.out.println("El saldo actualizado es: " + saldo);
+                    break;
+                case 9:
+                    System.out.println("Saliendo del programa gracias por utilizar nuestro servicio");
+
+                    break;
+
+                default:
+                    System.out.println("Opcion no valida");
+            }
 
         }
 
     }
+
 }
